@@ -2,12 +2,10 @@ import Homework4.Triangle;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-import static Homework4.Triangle.*;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TriangleTests {
+public class TriangleTests_Homework4 {
 
     @Test
     @DisplayName("Расчет площади треугольника")
