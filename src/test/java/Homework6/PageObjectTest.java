@@ -31,7 +31,6 @@ public class PageObjectTest {
                 //.checkTotalSumma("$18.51");
         Assertions.assertEquals(
                 driver.findElement(By.xpath("//div[@class ='box-cart-bottom']//span")).isDisplayed(), true);
-
         //Thread.sleep(10000);
     }
 
