@@ -1,5 +1,6 @@
 package Homework6;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,24 +13,15 @@ public class TShirtsPage extends BasePage {
     }
 
     @FindBy(xpath = "//*[@src='http://automationpractice.com/img/p/1/1-home_default.jpg']")
-    private List<WebElement> sizesList;
+    private WebElement productElement;
 
-//    public TShirtsPage selectSize(String size) {
-//        sizesList.stream().filter(s -> s.getText().contains(size)).findFirst().get().click();
-//        return this;
-//    }
-//
-//    @FindBy(xpath = "//ul[@class='product_list grid row']/li")
-//    private WebElement productElement;
-//
-//    @FindBy(xpath = "//span[.='Add to cart']")
-//    private WebElement addToCartButton;
-//
-//    public SuccessAddToCartPage moveMouseToProductAndAddToCart() {
+    public SuccessAddToCartPage moveMouseToProductAndAddToCart() {
+        driver.findElement(By.xpath("//*[@src='http://automationpractice.com/img/p/1/1-home_default.jpg']")).click();
 //        actions.moveToElement(productElement)
 //                .build()
 //                .perform();
 //        addToCartButton.click();
-//        return new SuccessAddToCartPage(driver);
-//    }
+        return new SuccessAddToCartPage(driver);
+    }
+
 }

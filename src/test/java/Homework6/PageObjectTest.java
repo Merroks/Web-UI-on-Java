@@ -2,10 +2,8 @@ package Homework6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import Homework6.MainPage;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -25,23 +23,16 @@ public class PageObjectTest {
 
     @Test
     void putTShirtToCartTest() throws InterruptedException {
-       // MainPage mainPage = new MainPage(driver);
-       // mainPage.clickSingInButton();
-       // new LoginPage(driver).login("automatisationtesting@yandex.ru", "8qiW9J*FwJDLmu5");
-       // new MainMenuBlock(driver).hoverWomenButton();
-       // new WomenSuggestPage(driver).
-
-        //new MainPage(driver).clickSingInButton();
-
-        new MainPage(driver).clickSingInButton()
+           new MainPage(driver).clickSingInButton()
                 .login("automatisationtesting@yandex.ru", "8qiW9J*FwJDLmu5")
                 .searchBox.tShirtSearchButton("T-shirts")
-                .clickTShirtsButton();
-                //.selectSize("S")
-                //.moveMouseToProductAndAddToCart()
+                .clickTShirtsButton()
+                .moveMouseToProductAndAddToCart();
                 //.checkTotalSumma("$18.51");
+        Assertions.assertEquals(
+                driver.findElement(By.xpath("//div[@class ='box-cart-bottom']//span")).isDisplayed(), true);
 
-        Thread.sleep(10000);
+        //Thread.sleep(10000);
     }
 
     @AfterEach
