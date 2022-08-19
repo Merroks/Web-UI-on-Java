@@ -1,3 +1,5 @@
+package Homework4;
+
 import Homework4.Triangle;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
